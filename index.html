@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Coach AI - 你的个人成长助手</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部区域 -->
+        <div class="header">
+            <h1>Life Coach AI</h1>
+            <p>你的个人成长助手，随时为你提供建议和指导</p>
+            <div class="view-toggle">
+                <button id="chatViewBtn" class="view-btn active">聊天</button>
+                <button id="chartViewBtn" class="view-btn">情绪趋势</button>
+            </div>
+        </div>
+        
+        <!-- 聊天区域 -->
+        <div class="chat-container" id="chatContainer">
+            <!-- 初始消息 -->
+            <div class="message ai-message">
+                <div class="message-content">
+                    你好！我是你的AI生活教练。我可以帮助你解决生活中的问题，提供个人成长建议，或者只是倾听你的想法。请告诉我你今天想聊些什么？
+                </div>
+            </div>
+            <!-- 消息将通过JavaScript动态添加 -->
+        </div>
+        
+        <!-- 图表区域 -->
+        <div class="chart-container" id="chartContainer" style="display: none;">
+            <div class="chart-header">
+                <h3>情绪变化趋势</h3>
+                <div class="chart-period-selector">
+                    <button class="period-btn active" data-period="week">一周</button>
+                    <button class="period-btn" data-period="month">一个月</button>
+                    <button class="period-btn" data-period="all">全部</button>
+                </div>
+            </div>
+            <canvas id="moodChart"></canvas>
+            <div class="chart-info">图表显示了你在不同时间的情绪变化，帮助你了解自己的情绪模式。</div>
+        </div>
+        
+        <!-- 状态提示区域 -->
+        <div class="status" id="status">
+            <!-- 加载状态将通过JavaScript动态显示 -->
+        </div>
+        
+        <!-- 心情选择区域 -->
+        <div class="mood-selector" id="moodSelector">
+            <span class="mood-label">当前心情：</span>
+            <div class="mood-options">
+                <button class="mood-option" data-mood="happy">😊 开心</button>
+                <button class="mood-option" data-mood="sad">😢 难过</button>
+                <button class="mood-option" data-mood="angry">😠 生气</button>
+                <button class="mood-option" data-mood="anxious">😰 焦虑</button>
+                <button class="mood-option" data-mood="neutral">😐 平静</button>
+            </div>
+        </div>
+        
+        <!-- 输入区域 -->
+        <div class="input-container">
+            <input type="text" class="input-field" id="userInput" placeholder="输入你的问题或想法..." autocomplete="off">
+            <button class="send-button" id="sendButton">发送</button>
+        </div>
+        
+        <!-- 页脚区域 -->
+        <div class="footer">
+            <p>powered by 哆啦aya 梦</p>
+        </div>
+    </div>
+    
+    <!-- 引入JavaScript文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
